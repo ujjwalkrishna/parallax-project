@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/hover-effects.css" rel="stylesheet">
+    <link rel="stylesheet" href="layout2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="layout2">
+        <div class="container">
+            <div class="row">
+                <div class="menu col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-3">
+                    <div>
+                        <div class="logo_container" style="margin-top: 6px;">
+
+                            <div class="logo_n" id="scene">
+                                <div class="logo_layer_back">
+                                <img src="assets/images/back.png" alt="">
+                                </div> 
+                                <div class="logo_layer_second">
+                                <img src="assets/images/second.png" alt="">
+                                </div>
+
+                                <div class="logo_layer_top">
+                                <a href="https://mchonjb.com">
+                                <img src="assets/images/top.png" alt="">
+                                </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <ul>
+                            <!-- <li><img src="/static/m_logo2-746aad928689961c6181104097255662.png" alt="Logo"
+                                    class="centerImg"></li> -->
+
+                            <nav id="hamnav"><label for="hamburger">☰</label><input type="checkbox" id="hamburger">
+                                <div id="hamitems">
+                                    <li><a href="https://www.mchonjb.com/resume">Resume</a></li>
+                                    <li><a href="#">item 2</a></li>
+                                    <li><a href="#">item 3</a></li>
+                                    <li><a href="#">item 4</a></li>
+                                </div>
+                            </nav>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-7 col-xl-8">
+                    <h1>McHon Keleidjien J’s Résumé</h1>
+                    <div>
+                        <p>Brooklyn, NY/ 1-646-243-0484/myinbox@mchonjb.com</p>
+
+
+
+                        <p><strong>Founder of startup</strong>, 7/2017 – 4/2018, New York City, New York</p>
+
+
+
+                        <p><strong>Open Hedge</strong></p>
+
+
+
+                        <p>Developed and designed a platform which streamed and parsed NYSE market data in a
+                            cost-effective
+                            manner. Instruments were integrated to manipulate collected&nbsp;market data and form
+                            analytic
+                            models, such as the correlation between fundamentals, technical market information and
+                            market
+                            value, psychometric and&nbsp;sentiment analysis, and market momentum.</p>
+
+
+
+                        <p><strong>UX/UI Design</strong>, 8/2015 – 7/2017, New York City, New York</p>
+
+
+
+                        <p><strong>Purify Tea, LLC</strong></p>
+
+
+
+                        <p>Established a user interface design for strategic business to customer interfacing; between
+                            Purify Tea, LLC and its customers. Conducted web conferences to discuss<br>possible
+                            solutions
+                            that improved or facilitated new forms of user experiences. To finalize the project’s
+                            front-end
+                            and back-end, managing, informing, maintaining,<br>and coordinating a network of other
+                            developers was vital to running a smooth operation within our development’s pipeline.</p>
+
+
+
+                        <p><br><strong>Interaction Design</strong>, 2/2014 – 10/2016, Nassau, The Bahamas</p>
+
+
+
+                        <p><strong>Bahamian Escapes</strong></p>
+
+
+
+                        <p>Developed and designed a digital footprint for a property management company located in the
+                            Bahamas. Overlaying a robust content management system, integrated an interface that allowed
+                            end-users to review properties listed by the property management team’s property aggregator.
+                            Also, designed a communication endpoint between end-users and property management agents.
+                        </p>
+
+
+
+                        <p><strong>Back-end Development</strong>, 12/2011 – 7/2013, Vancouver, Canada</p>
+
+
+
+                        <p><strong>Monstercat Media</strong></p>
+
+
+
+                        <p>Developed a rigid, automated system which helped facilitate networking and partnering between
+                            musicians and the label’s management team.</p>
+
+
+
+                        <h3>EDUCATION</h3>
+
+
+
+                        <p><strong>Columbia Engineering Boot Camp</strong></p>
+
+
+
+                        <p>UX/UI Design and development (560 Hours)</p>
+
+
+
+                        <p><strong>Galvanize, Inc. New York City Campus</strong></p>
+
+
+
+                        <p>Data Science Immersive program and Python Fundamentals (672 Hours)</p>
+
+
+
+                        <p><strong>Mercy CollegePrivate university in Dobbs Ferry, New York</strong></p>
+
+
+
+                        <p>Bachelor’s in Health Sciences; Minor in Psychology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--scripts-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+   <script>
+        var llFollowX1 = 0,
+            llFollowY1 = 0,
+
+            llFollowX = 0,
+            llFollowY = 0,
+
+            x = 0,
+            y = 0,
+
+            x1 = 0,
+            y1 = 0,
+
+            friction1 = 4 / 40,
+            friction = 2 / 5;
+
+        function moveBackground() {
+            x += (llFollowX - x) * friction;
+            y += (llFollowY - y) * friction;
+
+            x1 += (llFollowX1 - x1) * friction1;
+            y1 += (llFollowY1 - y1) * friction1;
+
+            translate1 = 'translate(' + x1 + 'px, ' + y1 + 'px) scale(1.0)';
+            translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.0)';
+
+            $('.logo_layer_back').css({
+                '-webit-transform': translate1,
+                '-moz-transform': translate1,
+                'transform': translate1
+            });
+
+            $('.logo_layer_second').css({
+                '-webit-transform': translate,
+                '-moz-transform': translate,
+                'transform': translate
+            });
+
+
+            window.requestAnimationFrame(moveBackground);
+        }
+
+        $(window).on('mousemove', function (e) {
+
+            var llMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+            var llMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+            llFollowX = (10 * llMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+            llFollowY = (10 * llMouseY) / 100;
+
+            var llMouseX1 = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+            var llMouseY1 = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+            llFollowX1 = -((10 * llMouseX1) / 100); // 100 : 12 = lMouxeX : lFollow
+            llFollowY1 = -((10 * llMouseY1) / 100);
+
+        });
+
+        moveBackground();
+    </script>
+
+    <script>
+        console.log('Req');
+        if (window.DeviceMotionEvent) {
+            window.addEventListener('devicemotion', (e)=>{
+                console.log(e.rotationRate);
+                let alpha = e.rotationRate.alpha;
+                let beta = e.rotationRate.beta;
+                let gamma = e.rotationRate.gamma;
+                console.log('device is moving');
+                console.log(alpha, beta, gamma);
+                if(alpha != null || beta != null || gamma != null){
+                    console.log('Mobile is rotated');
+                }
+        });
+        }
+    </script>
+
+</body>
+
+</html>
