@@ -216,6 +216,7 @@
     </script>
 
     <script>
+        var scene = document.getElementById('#scene');
         console.log('Req');
         if (window.DeviceMotionEvent) {
             window.addEventListener('devicemotion', (e)=>{
@@ -226,6 +227,7 @@
                 console.log('device is moving');
                 console.log(alpha, beta, gamma);
                 if(alpha != null || beta != null || gamma != null){
+                    scene.innerHTML = "On Mobile View";
                     console.log('Mobile is rotated');
                 }
         });
