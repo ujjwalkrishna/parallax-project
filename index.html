@@ -274,8 +274,8 @@
                     console.log(alpha, beta, gamma);
                     if (alpha != null || beta != null || gamma != null) {
                         var llMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - alpha));
-                        var llMouseY = Math.max(-100, Math.min(100, $(window).height() /2 - beta));
-                        document.querySelector('.content').innerHTML = alpha + '' + beta + '' + gamma;
+                        var llMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - beta));
+                        document.querySelector('.content').innerHTML = llMouseX + '' + llMouseY;
                         llFollowX = (10 * llMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
                         llFollowY = (10 * llMouseY) / 100;
 
