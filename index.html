@@ -243,6 +243,7 @@
 
                 translate1 = 'translate(' + x1 + 'px, ' + y1 + 'px) scale(1.0)';
                 translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.0)';
+                document.querySelector('.content').innerHTML = x + ' ' + y + ' ' + x1 + ' ' + y1 + ' ' + translate1 + ' ' + translate;
 
                 $('.logo_layer_back').css({
                     '-webit-transform': translate1,
@@ -273,12 +274,14 @@
                     // document.querySelector('.content').innerHTML = alpha + '' + beta + '' + gamma;
                     console.log(alpha, beta, gamma);
                     if (alpha != null || beta != null || gamma != null) {
+
                         alpha = `rotateZ(${-e.alpha}deg)`
                         beta = `rotateX(${-e.beta}deg)`
                         gamma = `rotateY(${e.gamma}deg)`
-                        var llMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - alpha));
-                        var llMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - beta));
-                        document.querySelector('.content').innerHTML = typeof(alpha) + ' ' + typeof(beta);
+
+                        var llMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - Number(alpha)));
+                        var llMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - Number(beta)));
+                       
                         llFollowX = (10 * llMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
                         llFollowY = (10 * llMouseY) / 100;
 
