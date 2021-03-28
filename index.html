@@ -275,12 +275,8 @@
                     console.log(alpha, beta, gamma);
                     if (alpha != null || beta != null || gamma != null) {
 
-                        alpha = `rotateZ(${-e.alpha}deg)`
-                        beta = `rotateX(${-e.beta}deg)`
-                        gamma = `rotateY(${e.gamma}deg)`
-
-                        var llMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - Number(alpha)));
-                        var llMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - Number(beta)));
+                        var llMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - alpha));
+                        var llMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - beta));
                        
                         llFollowX = (10 * llMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
                         llFollowY = (10 * llMouseY) / 100;
