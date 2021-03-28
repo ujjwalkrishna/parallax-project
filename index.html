@@ -273,6 +273,9 @@
                     // document.querySelector('.content').innerHTML = alpha + '' + beta + '' + gamma;
                     console.log(alpha, beta, gamma);
                     if (alpha != null || beta != null || gamma != null) {
+                        alpha = `rotateZ(${-e.alpha}deg)`
+                        beta = `rotateX(${-e.beta}deg)`
+                        gamma = `rotateY(${e.gamma}deg)`
                         var llMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - alpha));
                         var llMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - beta));
                         document.querySelector('.content').innerHTML = typeof(alpha) + ' ' + typeof(beta);
