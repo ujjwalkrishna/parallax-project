@@ -22,16 +22,16 @@
 
                             <div class="logo_n" id="scene">
                                 <div class="logo_layer_back">
-                                <img src="assets/images/back.png" alt="">
-                                </div> 
+                                    <img src="assets/images/back.png" alt="">
+                                </div>
                                 <div class="logo_layer_second">
-                                <img src="assets/images/second.png" alt="">
+                                    <img src="assets/images/second.png" alt="">
                                 </div>
 
                                 <div class="logo_layer_top">
-                                <a href="https://mchonjb.com">
-                                <img src="assets/images/top.png" alt="">
-                                </a>
+                                    <a href="https://mchonjb.com">
+                                        <img src="assets/images/top.png" alt="">
+                                    </a>
                                 </div>
                             </div>
 
@@ -156,7 +156,7 @@
     <!--scripts-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-   <script>
+    <script>
         var llFollowX1 = 0,
             llFollowY1 = 0,
 
@@ -216,22 +216,20 @@
     </script>
 
     <script>
-        var scene = document.getElementById('#scene');
-        console.log('Req');
-        if (window.DeviceMotionEvent) {
-            window.addEventListener('devicemotion', (e)=>{
-                console.log(e.rotationRate);
-                let alpha = e.rotationRate.alpha;
-                let beta = e.rotationRate.beta;
-                let gamma = e.rotationRate.gamma;
-                console.log('device is moving');
-                console.log(alpha, beta, gamma);
-                if(alpha != null || beta != null || gamma != null){
-                    scene.innerHTML = "On Mobile View";
-                    console.log('Mobile is rotated');
-                }
-        });
-        }
+        $(document).ready(() => {
+
+            console.log('Req');
+            if (window.DeviceOrientationEvent) {
+                window.addEventListener('deviceorientation', (e)=>{
+                    let { alpha, beta, gamma } = e;
+                    console.log(alpha, beta, gamma);
+                    if(alpha != null || beta != null || gamma != null){
+                        document.getElementById('scene').innerHTML = 'On Mobile View';
+                    }
+                }, false);
+                // document.getElementById("doeSupported").innerText = "Supported!";
+            }
+        })
     </script>
 
 </body>
